@@ -1,0 +1,55 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Bloggeri"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "This is my website"
+homepage = "http://example.com/"
+tags = []
+features = []
+min_version = "0.41.0"
+title = "Päkstech.dev"
+
+[author]
+  name = ""
+  homepage = ""
+
+# If porting an existing theme
+[original]
+  name = ""
+  homepage = ""
+  repo = ""
+[params]
+  description = "My site description"
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog"
+
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/pakstech"
+  pre = "<i class='fab fa-github'></i>"
+
+[[menu.social]]
+  name = "YouTube"
+  url = "https://www.youtube.com/channel/UCg_e3UBPs-BxPo_jVg1gGOQ"
+  pre = "<i class='fab fa-youtube'></i>"
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/pakstech"
+  pre = "<i class='fab fa-twitter'></i>"
+
+[[menu.footer]]
+  name = "About"
+  url = "/about"
+
+[[menu.footer]]
+  name = "Privacy"
+  url = "/privacy"

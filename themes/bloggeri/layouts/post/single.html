@@ -1,0 +1,77 @@
+{{ define "main" }}
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
+<section class="section">
+  <article>
+    <div class="columns is-centered">
+        <div class="column max-800px">
+          <h1 class="title is-1">{{ .Title }}</h1>
+          <div class="title subtitle heading is-6">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <div class="columns is-vcentered is-mobile">
+                        {{ with .Site.Params.authorImage }}
+                        <div class="column is-narrow">
+                          <img src="{{ . }}" class="author-image">
+                        </div>
+                        {{ end }}
+                        <div class="column">
+                          <p>{{ .Params.Author }}</p>
+                          <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
+                              {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
+                        </div>
+                      </div>
+            </div>
+            <div class="column">
+              {{ range $idx, $category := .Params.categories }}
+              {{- if ne $idx 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+              {{- end }}
+            </div>
+          </div>
+            </div>
+            {{ with .Params.images }}
+        <figure class="title-image">
+            <img src="{{ index . 0 }}" alt="">
+        </figure>
+        {{ end }}
+        <p>Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in
+        the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow.</p>
+        <h3>Map of All Scotland (2020/2021)</h3>
+        <iframe src="/leaflet/fire/FireMapAll.html" width ="100%" height = "100%"></iframe>
+        <h3>Map of Accidental Scotland (2020/2021)</h3>
+        <iframe src="/leaflet/fire/FireMapAccidental.html" width ="100%" height = "100%"></iframe>
+        <h3>Map of Not-Accidental Scotland (2020/2021)</h3>
+        <iframe src="/leaflet/fire/FireMapNotAccidental.html" width ="100%" height = "100%"></iframe>
+        <h3>Map of percentage of population/ percentage of fires in Scotland per consticuency (2020/2021)</h3>
+        <iframe src="/leaflet/fire/FireMapFirePerPop.html" width ="100%" height = "100%"></iframe>
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+  </article>
+</section>
+<section class="section">
+    <div class="columns is-centered">
+      <div class="column max-800px">
+        <div class="columns is-mobile">
+          <div class="column has-text-left">
+            {{ with .PrevInSection }}
+            <p>Previous post</p>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+          </div>
+          <div class="column has-text-right">
+            {{ with .NextInSection }}
+            <p>Next post</p>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
