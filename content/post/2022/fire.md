@@ -1,6 +1,6 @@
 ---
 title: "How hot is Scotland? - all fires in the last decade"
-date: 2022-06-18T22:53:38+01:00
+date: 2022-06-04T18:53:38+01:00
 author: Niklas Lange
 categories:
   - Crime and Justice
