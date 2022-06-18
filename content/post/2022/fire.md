@@ -1,16 +1,17 @@
 ---
 title: "How hot is Scotland? - all fires in the last decade"
 date: 2022-05-28T22:53:38+01:00
-draft: False
 author: Niklas Lange
 categories:
   - Crime and Justice
 images:
   - /images/blog/2022/fire/fire.jpg
-draft: False
+html:
+  - /leaflet/fire/FireMapAll.html
 description: "Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow. Interactive maps of Fires  in Scotland from the last year and other interesting information - click the title to discover more"
 ---
-![image](leaflet/fire/FireMapAll.html)
+
+
 (Map put into four different sections because the file was to big to publish with all three together)
 
 We can see how most full time fire stations are around Aberdeen, Dundee, Edinburgh and Glasgow respectively with a significant amount of volounter firestation in the highlands and other place. Most island that are not part of the main island have no fire Station.
@@ -35,7 +36,9 @@ graphs where plotted using the pearson correlation
 
 It is difficult to predict how many fires are happening but we can find the average amount of fires each year and day for the nation/council region using data from the last five years
 
-#### Creat more graphs
+![image](/images/blog/2022/fire/average_years.jpeg)
+
+![image](/images/blog/2022/fire/fire_average_2.jpeg)
 
 #### The goverment puts fires in two major categories
 ##### Accidental and Not Accidental
