@@ -10,6 +10,7 @@ images:
 draft: False
 description: "Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow. Interactive maps of Fires  in Scotland from the last year and other interesting information - click the title to discover more"
 ---
+![image](leaflet/fire/FireMapAll.html)
 (Map put into four different sections because the file was to big to publish with all three together)
 
 We can see how most full time fire stations are around Aberdeen, Dundee, Edinburgh and Glasgow respectively with a significant amount of volounter firestation in the highlands and other place. Most island that are not part of the main island have no fire Station.

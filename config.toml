@@ -1,4 +1,4 @@
-baseURL = 'http://ScotlandStats.org/'
+baseURL = 'http://scotlandstats.org/'
 languageCode = 'en-us'
 title = 'Scotland Stats'
 theme = "bloggeri"
