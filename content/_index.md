@@ -1,9 +1,8 @@
 ---
-title: "Scotland Stats"
-date: 2022-05-23T21:40:16+01:00
+date: "2022-05-23T21:40:16+01:00"
 heroimage: /images/home.jpg
 herotext: Visualizing Data for Scotland
-
+title: Scotland Stats
 ---
 # Our Goal
 To make it as easy as possible for you to understand the raw data and numbers

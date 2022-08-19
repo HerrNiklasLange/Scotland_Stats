@@ -1,0 +1,58 @@
+---
+title: "How hot is Scotland? - all fires in the last decade"
+date: "2022-08-21T18:53:38+01:00"
+author: Niklas Lange
+categories:
+  - Crime and Justice
+images:
+  - /images/blog/2022/fire/fire.jpg
+html:
+  - /leaflet/fire/FireMapAll.html
+description: "Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow. Interactive maps of Fires  in Scotland from the last year and other interesting information - click the title to discover more"
+---
+
+<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
+<link href="{{< blogdown/postref >}}index_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/datatables-binding/datatables.js"></script>
+<script src="{{< blogdown/postref >}}index_files/jquery/jquery-3.6.0.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="{{< blogdown/postref >}}index_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/crosstalk/js/crosstalk.min.js"></script>
+
+
+<p>Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where ‘Not-Accidental’, especially with areas that have a high population most notable Glasgow.</p>
+<p>Fires over the last decade</p>
+<img src="/images/blog/2022/fire/histogram.jpeg" style="height: 100%; width:100%"></img>
+<p>we can also see a trend with fires over the last decade. Taking a significant decrease after 2010/2011.</p>
+<p>#Map of fires and category for each constuciency from 2020/2021</p>
+
+<iframe src="/leaflet/fire/FireMapAll.html" style="height: 610px; width:100%"></iframe>  <!-- Need to change this -->
+<iframe src="/leaflet/fire/FireMapAccidental.html" style="height: 610px; width:100%"></iframe>  <!-- Need to change this -->
+<iframe src="/leaflet/fire/FireMapNotAccidental.html" style="height: 610px; width:100%"></iframe>  <!-- Need to change this -->
+<iframe src="/leaflet/fire/FireMapFirePerPop.html" style="height: 610px; width:100%"></iframe>  <!-- Need to change this -->
+
+<p>We can see how most full time fire stations are around Aberdeen, Dundee, Edinburgh and Glasgow respectively with a significant amount of volunteer fire-station in the highlands and other place. Most island that are not part of the main island have no fire Station.</p>
+<p>The last map - total percentage of fires/total percentage of population for each constituency - is not a good indicator for prediction of fires because their is little correlation when plotting fires per population(look at graphs below)</p>
+<p>graphs where plotted using the pearson correlation</p>
+<img src="/images/blog/2022/fire/NotAcciCorrelation.png" style="height: 100%; width:100%"></img>
+<p>30% accurate to predict number of Not-Accidental fires per population</p>
+<img src="/images/blog/2022/fire/AcciCorrelation.png" style="height: 100%; width:100%"></img>
+<p>47% Accurate to predict number of Accidental fires per population</p>
+<img src="/images/blog/2022/fire/AllCorrelation.png" style="height: 100%; width:100%"></img>
+<p>43% accurate to predict number of All fires in scotland per population
+Note: each point represents a consticuency with the most recent population estimates and number of fires for each category from 2020/2021
+It is difficult to predict how many fires are happening but we can find the average amount of fires each year and day for the nation/council region using data from the last five years</p>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33"],["Scotland","Aberdeen City","Aberdeenshire","Angus","Argyll and Bute","City of Edinburgh","Clackmannanshire","Dumfries and Galloway","Dundee City","East Ayrshire","East Dunbartonshire","East Lothian","East Renfrewshire","Falkirk","Fife","Glasgow City","Highland","Inverclyde","Midlothian","Moray","Na h-Eileanan Siar","North Ayrshire","North Lanarkshire","Orkney Islands","Perth and Kinross","Renfrewshire","Scottish Borders","Shetland Islands","South Ayrshire","South Lanarkshire","Stirling","West Dunbartonshire","West Lothian"],[25945.6,862.8,730.2,360.8,329.4,2700.8,187.8,469.6,1022.8,799.6,355,420.8,280.6,700.2,1519.6,4117.4,959.4,602.2,488,301,131.2,855,2041.4,43.2,443.2,937,368.4,54.2,453.8,1401.2,353.6,565.6,1089.8],[71.0351813826146,2.36221765913758,1.99917864476386,0.987816563997262,0.901848049281314,7.39438740588638,0.514168377823409,1.28569472963723,2.80027378507871,2.18918548939083,0.971937029431896,1.15208761122519,0.768240930869268,1.9170431211499,4.16043805612594,11.2728268309377,2.62669404517454,1.64873374401095,1.33607118412047,0.824093086926763,0.359206023271732,2.34086242299795,5.58904859685147,0.118275154004107,1.21341546885695,2.56536618754278,1.00862422997947,0.14839151266256,1.24243668720055,3.8362765229295,0.968104038329911,1.54852840520192,2.98370978781656],[11103.6,492.8,513,222.6,247.8,1278.6,103.4,320,383.6,198.2,129.2,195.8,112.4,325.8,671.8,1349,783.8,141.2,169.4,213.8,123.2,262.2,523,39.8,328.4,308.8,234.4,50,197,455.8,207.2,186.2,335.4],[30.4,1.3492128678987,1.40451745379877,0.609445585215606,0.678439425051335,3.5006160164271,0.283093771389459,0.876112251882272,1.05023956194387,0.542642026009582,0.353730321697467,0.536071184120465,0.307734428473648,0.891991786447639,1.83928815879535,3.6933607118412,2.14592744695414,0.386584531143053,0.463791923340178,0.585352498288843,0.337303216974675,0.717864476386037,1.43189596167009,0.108966461327858,0.899110198494182,0.845448323066393,0.641752224503765,0.136892539356605,0.539356605065024,1.24791238877481,0.567282683093771,0.509787816563997,0.918275154004107],[14842,370,217.2,138.2,81.6,1422.2,84.4,149.6,639.2,601.4,225.8,225,168.2,374.4,847.8,2768.4,175.6,461,318.6,87.2,8,592.8,1518.4,3.4,114.8,628.2,134,4.2,256.8,945.4,146.4,379.4,754.4],[40.6351813826146,1.01300479123888,0.594661190965092,0.378370978781656,0.223408624229979,3.89377138945927,0.231074606433949,0.409582477754962,1.75003422313484,1.64654346338125,0.618206707734428,0.616016427104723,0.460506502395619,1.02505133470226,2.3211498973306,7.57946611909651,0.480766598220397,1.2621492128679,0.872279260780288,0.238740588637919,0.0219028062970568,1.62299794661191,4.15715263518138,0.00930869267624914,0.314305270362765,1.71991786447639,0.366872005475702,0.0114989733059548,0.703080082135524,2.58836413415469,0.40082135523614,1.03874058863792,2.06543463381246]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Region<\/th>\n      <th>All_Year<\/th>\n      <th>All_Day<\/th>\n      <th>Accidental_Year<\/th>\n      <th>Accidental_Day<\/th>\n      <th>NotAccidental_Year<\/th>\n      <th>NotAccidental_Day<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>The government puts fires in two major categories
+Accidental and Not Accidental
+We can see how they make up the percentage of total fires over the last three years</p>
+<img src="/images/blog/2022/fire/donut20-21.jpeg" style="height: 100%; width:100%"></img>
+<img src="/images/blog/2022/fire/donut19-20.jpeg" style="height: 100%; width:100%"></img>
+<img src="/images/blog/2022/fire/donut18-19.jpeg" style="height: 100%; width:100%"></img>
+<p>This shows that clearly there is stable trend from expecting how many fires of the total fires are Accidental (around 42.7%) and Not Accidental fires (around 57.3%)</p>
+<p>Thank you for reading the first post, this took me longer then I like to admit but I am grateful and hope that you found it at least interesting. If you want to use any of the graphs please go to the contact page and fill in the form.</p>
+<p>The data used was from the the Scottish government statistics website - linked below</p>
+<p><a href="https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ffire---type-of-incident" class="uri">https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ffire---type-of-incident</a></p>

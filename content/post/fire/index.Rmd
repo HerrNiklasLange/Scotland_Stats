@@ -1,0 +1,144 @@
+---
+title: "How hot is Scotland? - all fires in the last decade"
+date: 2022-08-19T18:53:38+01:00
+author: Niklas Lange
+categories:
+  - Crime and Justice
+images:
+  - /images/blog/2022/fire/fire.jpg
+html:
+  - /leaflet/fire/FireMapAll.html
+description: "Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow. Interactive maps of Fires  in Scotland from the last year and other interesting information - click the title to discover more"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# load ggplot2 silently
+suppressWarnings(library(ggplot2))
+# chunk option dev="svg" produces very large vector graphics files
+knitr::opts_chunk$set(dev="svg")
+# chunk option dev="png" is the default raster graphics format for HTML output
+knitr::opts_chunk$set(dev="png")
+```
+Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow.
+
+Fires over the last decade
+
+we can also see a trend with fires over the last decade. Taking a significant decrease after 2010/2011.
+
+#Map of fires and category for each constuciency from 2020/2021
+
+We can see how most full time fire stations are around Aberdeen, Dundee, Edinburgh and Glasgow respectively with a significant amount of volunteer fire-station in the highlands and other place. Most island that are not part of the main island have no fire Station.
+
+The last map - total percentage of fires/total percentage of population for each constituency - is not a good indicator for prediction of fires because their is little correlation when plotting fires per population(look at graphs below)
+
+graphs where plotted using the pearson correlation
+
+
+30% accurate to predict number of Not-Accidental fires per population
+
+
+47% Accurate to predict number of Accidental fires per population
+
+
+43% accurate to predict number of All fires in scotland per population
+Note: each point represents a consticuency with the most recent population estimates and number of fires for each category from 2020/2021
+It is difficult to predict how many fires are happening but we can find the average amount of fires each year and day for the nation/council region using data from the last five years
+
+
+```{r AverageDay_Year,echo=FALSE, message=FALSE}
+library(dplyr) #library to make programme run
+library(sf)
+library(leaflet)
+library(htmlwidgets)
+library(RColorBrewer)
+library(htmltools)
+library(formattable)
+library(readxl)
+library(ggplot2)
+library(ggpubr)
+library(plyr)
+
+
+setwd("C:\\Users\\nikla\\programming_projects\\R\\maps")
+
+CouncilArea <- read_excel("datasets/CouncilAreas.xlsx")
+
+criteria <- c("2020/2021", "2019/2020", "2018/2019", "2017/2018", "2016/2017")
+df1 <- CouncilArea %>%
+  filter(Reference %in% "2020/2021") %>% select(-Reference)
+df2 <- CouncilArea %>%
+  filter(Reference %in% "2019/2020") %>% select(-Reference)
+df3 <- CouncilArea %>%
+  filter(Reference %in% "2018/2019") %>% select(-Reference)
+df4 <- CouncilArea %>%
+  filter(Reference %in% "2017/2018") %>% select(-Reference)
+df5 <- CouncilArea %>%
+  filter(Reference %in% "2016/2017") %>% select(-Reference)
+
+year <- 5
+day <- 5 * 365.25
+
+All <- df1$All + df2$All + df3$All + df4$All +df5$All
+YearAll <- All / year
+DayAll <- All / day
+DayAll <- formattable(DayAll, digits = 2, format = "f")
+
+Accidental <- df1$Accidental + df2$Accidental + df3$Accidental + df4$Accidental +df5$Accidental
+YearAccidental <- Accidental / year
+DayAccidental <- Accidental /day
+DayAccidental <- formattable(DayAccidental, digits = 2, format = "f")
+
+NotAccidental <- df1$NotAccidental + df2$NotAccidental + df3$NotAccidental + df4$NotAccidental +df5$NotAccidental
+YearNotAccidental <- NotAccidental / year
+DayNotAccidental <- NotAccidental /day
+DayNotAccidental <- formattable(DayNotAccidental, digits = 2, format = "f")
+ CouncilArea %>%
+  filter(Reference %in% criteria)
+CouncilArea <- CouncilArea %>% select(-Reference)
+  
+x <- 25945.6/365.25
+y <- 14842/365.25
+rm(AverageDay_Year)
+rm(AverageDay_YearScotland)
+AverageDay_YearScotland <- data.frame(Region=c("Scotland"),
+                               All_Year= (25945.6),
+                               All_Day= (x),
+                               Accidental_Year=  (11103.6),
+                               Accidental_Day= (30.4),
+                               NotAccidental_Year= (14842),
+                               NotAccidental_Day = (y))
+AverageDay_Year <- data.frame(Region= df1$CouncilAreas,
+                                       All_Year= YearAll,
+                                       All_Day= DayAll,
+                                       Accidental_Year=  YearAccidental,
+                                       Accidental_Day= DayAccidental,
+                                       NotAccidental_Year= YearNotAccidental,
+                                       NotAccidental_Day = DayNotAccidental)
+
+AverageDay_Year <- rbind( AverageDay_YearScotland,AverageDay_Year)
+
+AverageDay_Year <- AverageDay_Year %>%
+  formattable(AverageDay_Year$All_Day, digits = 2, format = "f") %>%
+  formattable(AverageDay_Year$Accidental_Day, digits = 2, format = "f") %>%
+  formattable(AverageDay_Year$NotAccidental_Day, digits = 2, format = "f")
+library(knitr)
+library(DT)
+DT::datatable(AverageDay_Year)
+```
+
+The government puts fires in two major categories
+Accidental and Not Accidental
+We can see how they make up the percentage of total fires over the last three years
+
+
+This shows that clearly there is stable trend from expecting how many fires of the total fires are Accidental (around 42.7%) and Not Accidental fires (around 57.3%)
+
+
+
+Thank you for reading the first post, this took me longer then I like to admit but I am grateful and hope that you found it at least interesting. If you want to use any of the graphs please go to the contact page and fill in the form.
+
+The data used was from the the Scottish government statistics website - linked below
+
+https://statistics.gov.scot/resource?uri=http%3A%2F%2Fstatistics.gov.scot%2Fdata%2Ffire---type-of-incident

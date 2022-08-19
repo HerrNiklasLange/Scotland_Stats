@@ -13,7 +13,7 @@ paginate = 4
   repo = ""
 
 [params]
-  description = "My site description"
+  description = "Visualizes data sets from the Scottish statistical website"
   
 [[menu.main]]
     name = "Categories"

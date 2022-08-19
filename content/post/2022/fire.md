@@ -1,14 +1,19 @@
 ---
-title: "How hot is Scotland? - all fires in the last decade"
-date: 2022-06-04T18:53:38+01:00
+draft: True
 author: Niklas Lange
 categories:
-  - Crime and Justice
-images:
-  - /images/blog/2022/fire/fire.jpg
+- Crime and Justice
+date: "2022-06-10T18:53:38+01:00"
+description: Over the last decade scotland has seen decrease in fires over the last
+  decade. Although this is good it could be better. Most of the fires in the last
+  decade where 'Not-Accidental', especially with areas that have a high population
+  most notable Glasgow. Interactive maps of Fires  in Scotland from the last year
+  and other interesting information - click the title to discover more
 html:
-  - /leaflet/fire/FireMapAll.html
-description: "Over the last decade scotland has seen decrease in fires over the last decade. Although this is good it could be better. Most of the fires in the last decade where 'Not-Accidental', especially with areas that have a high population most notable Glasgow. Interactive maps of Fires  in Scotland from the last year and other interesting information - click the title to discover more"
+- /leaflet/fire/FireMapAll.html
+images:
+- /images/blog/2022/fire/fire.jpg
+title: How hot is Scotland? - all fires in the last decade
 ---
 
 
