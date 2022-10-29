@@ -8,7 +8,7 @@ title: Scotland Stats
 To make it as easy as possible for you to understand the raw data and numbers
 
 # New post
-Every week there will be a new post with data from https://statistics.gov.scot/home the offical Government website
+Click [here](/post) to see our newest post, sadly we won't be able to post regularly due to other commintements
 
 # Who are we?
 If you want to know who we are click [here](/about)
